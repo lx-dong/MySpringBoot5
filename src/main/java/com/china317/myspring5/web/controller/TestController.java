@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class TestController {
-    @RequestMapping(value={"/","/index"},consumes = MediaType.JSON_UTF_8)
+    @RequestMapping(value={"/","/index"})
     public ResponseMassage index(){
-        return ResponseMassage.newSuccessMsg("Hello World!");
+        return ResponseMassage.newSuccessMsg("Welcome!");
     }
 
 
