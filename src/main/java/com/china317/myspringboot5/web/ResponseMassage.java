@@ -1,4 +1,4 @@
-package com.china317.myspring5.web;
+package com.china317.myspringboot5.web;
 
 /**
  * Created by lx-dong on 2017/11/3.

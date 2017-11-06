@@ -1,4 +1,4 @@
-package com.china317.myspring5.util;
+package com.china317.myspringboot5.util;
 
 /**
  * Created by lx-dong on 2017/11/3.
