@@ -15,6 +15,7 @@ public class Person implements Serializable {
     private Long id;
     private String name;
     private String sex;
+    private Long phoneNo;
 
     public Long getId() {
         return id;
@@ -38,5 +39,13 @@ public class Person implements Serializable {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public Long getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(Long phoneNo) {
+        this.phoneNo = phoneNo;
     }
 }

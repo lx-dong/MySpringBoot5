@@ -27,4 +27,9 @@ public class ResponseMassage {
     public static ResponseMassage newSuccessMsg(Object result){
         return new ResponseMassage("ok", result);
     }
+
+    public static ResponseMassage newErrorMsg(Object result){
+        return new ResponseMassage("error", result);
+    }
+
 }

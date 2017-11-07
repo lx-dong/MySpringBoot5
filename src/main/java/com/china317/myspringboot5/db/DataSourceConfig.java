@@ -20,15 +20,15 @@ public class DataSourceConfig {
     @Primary
     @ConfigurationProperties("datasource.main")
     public DataSourceProperties mainDataSourceProperties(){
-        logger.error("mainDataSourceProperties init..");
+        logger.info("mainDataSourceProperties init..");
         return new DataSourceProperties();
     }
 
     @Bean
     @Primary
-    @ConfigurationProperties("datasource.main")
+    //@ConfigurationProperties("datasource.main")
     public DataSource mainDataSource(){
-        logger.error("mainDataSource init..");
+        logger.info("mainDataSource init..");
         //return DataSourceBuilder.create().build();
         return mainDataSourceProperties().initializeDataSourceBuilder().build();
     }
@@ -36,14 +36,14 @@ public class DataSourceConfig {
     @Bean
     @ConfigurationProperties("datasource.second")
     public DataSourceProperties secondDataSourceProperties(){
-        logger.error("secondDataSourceProperties init..");
+        logger.info("secondDataSourceProperties init..");
         return new DataSourceProperties();
     }
 
     @Bean
-    @ConfigurationProperties("datasource.second")
+   // @ConfigurationProperties("datasource.second")
     public DataSource secondDataSource(){
-        logger.error("secondDataSource init..");
+        logger.info("secondDataSource init..");
         return secondDataSourceProperties().initializeDataSourceBuilder().build();
     }
 
