@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60000" debug="false" >
-       <include resource="org/springframework/boot/logging/logback/defaults.xml" />
-       <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+      <!-- <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+       <include resource="org/springframework/boot/logging/logback/console-appender.xml" />-->
+       <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+              <encoder>
+                     <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+              </encoder>
+       </appender>
        <!-- 日志文件名 及 路径 -->
-       <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+       <!--<property name="LOG_FILE" value="${LOG_FILE}"/>-->
 
        <property name="smtpHost" value="mail.china317.com"/>
        <property name="smtpPort" value="25" />
@@ -26,7 +31,7 @@
        </appender>
 
        <!-- 邮件配置 -->
-       <appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+       <appender name="email" class="ch.qos.logback.classic.net.SMTPAppender">
               <smtpHost>${smtpHost}</smtpHost>
               <!--<smtpPort>${smtpPort}</smtpPort>-->
               <username>${username}</username>
@@ -60,12 +65,12 @@
 
        <!-- 只输出控制台日志。additivity 定义日志是否向上传递，true 会有重复日志产生 -->
        <logger name="com.china317.myspringboot5.test" level="DEBUG" additivity="false">
-              <appender-ref ref="CONSOLE" />
+              <appender-ref ref="console" />
        </logger>
 
        <root level="INFO">
-              <appender-ref ref="CONSOLE" />
+              <appender-ref ref="console" />
               <appender-ref ref="rolling_file" />
-              <!--<appender-ref ref="EMAIL"/>-->
+              <!--<appender-ref ref="email"/>-->
        </root>
 </configuration>

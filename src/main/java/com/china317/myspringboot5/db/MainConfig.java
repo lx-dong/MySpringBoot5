@@ -34,8 +34,8 @@ public class MainConfig {
                 return entityManagerFactoryBean.getObject().createEntityManager();
         }
 
-        @Primary
         @Bean
+        @Primary
         public PlatformTransactionManager mainTransactionManager(){
                 logger.debug("mainTransactionManager init..");
                 return new JpaTransactionManager(entityManagerFactoryBean.getObject());

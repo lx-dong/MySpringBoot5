@@ -34,8 +34,8 @@
         <version>1.5.8.RELEASE</version>
     </parent>
 
-    <!-- Add typical dependencies for a web application -->
     <dependencies>
+        <!-- spring-boot dependency begin -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -48,25 +48,28 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+        <!-- spring-boot dependency end -->
 
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.7</version>
-        </dependency>
-        <!-- jdbc driver -->
+        <!-- jdbc driver begin-->
         <dependency>
             <groupId>${jdbc.driver.groupId}</groupId>
             <artifactId>${jdbc.driver.artifactId}</artifactId>
             <version>${jdbc.driver.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.codehaus.janino/janino -->
+        <!-- jdbc driver end-->
+        <!-- logback dependency begin -->
         <dependency>
             <groupId>org.codehaus.janino</groupId>
             <artifactId>janino</artifactId>
             <version>2.5.16</version>
         </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        <!-- logback dependency end -->
         <!-- GENERAL UTILS begin -->
         <dependency>
             <groupId>org.apache.commons</groupId>
