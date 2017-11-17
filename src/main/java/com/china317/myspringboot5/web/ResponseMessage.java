@@ -3,15 +3,15 @@ package com.china317.myspringboot5.web;
 /**
  * Created by lx-dong on 2017/11/3.
  */
-public class ResponseMassage {
+public class ResponseMessage {
     public String status;
     public Object result;
 
-    public ResponseMassage(){
+    public ResponseMessage(){
 
     }
 
-    public ResponseMassage(String status, Object result) {
+    public ResponseMessage(String status, Object result) {
         this.result = result;
         this.status = status;
     }
@@ -24,12 +24,12 @@ public class ResponseMassage {
         this.result = result;
     }
 
-    public static ResponseMassage newSuccessMsg(Object result){
-        return new ResponseMassage("ok", result);
+    public static ResponseMessage newSuccessMsg(Object result){
+        return new ResponseMessage("ok", result);
     }
 
-    public static ResponseMassage newErrorMsg(Object result){
-        return new ResponseMassage("error", result);
+    public static ResponseMessage newErrorMsg(Object result){
+        return new ResponseMessage("error", result);
     }
 
 }

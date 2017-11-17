@@ -33,7 +33,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler{
             msg.put("msg", ex.getMessage());
         }
 
-        return new ResponseEntity<>(ResponseMassage.newErrorMsg(msg), status);
+        return new ResponseEntity<>(ResponseMessage.newErrorMsg(msg), status);
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {

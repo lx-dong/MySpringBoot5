@@ -1,6 +1,6 @@
 package com.china317.myspringboot5.web.controller;
 
-import com.china317.myspringboot5.web.ResponseMassage;
+import com.china317.myspringboot5.web.ResponseMessage;
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +34,7 @@ public class CustomErrorController implements ErrorController {
             msg.put("msg", status.getReasonPhrase());
         }
 
-        return new ResponseEntity<>(ResponseMassage.newErrorMsg(msg), status);
+        return new ResponseEntity<>(ResponseMessage.newErrorMsg(msg), status);
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {

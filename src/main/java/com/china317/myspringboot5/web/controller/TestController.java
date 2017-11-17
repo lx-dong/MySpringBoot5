@@ -2,13 +2,10 @@ package com.china317.myspringboot5.web.controller;
 
 import com.china317.myspringboot5.entity.main.Person;
 import com.china317.myspringboot5.entity.second.Second;
-import com.china317.myspringboot5.repository.main.PersonDao;
-import com.china317.myspringboot5.repository.second.SecondDao;
 import com.china317.myspringboot5.service.main.PersionService;
 import com.china317.myspringboot5.service.second.SecondService;
 import com.china317.myspringboot5.util.MediaType;
-import com.china317.myspringboot5.web.ResponseMassage;
-import com.fasterxml.jackson.databind.JsonNode;
+import com.china317.myspringboot5.web.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,44 +27,44 @@ public class TestController {
     SecondService secondService;
 
     @RequestMapping(value={"/","/index"})
-    public ResponseMassage index(){
-        return ResponseMassage.newSuccessMsg("Welcome!");
+    public ResponseMessage index(){
+        return ResponseMessage.newSuccessMsg("Welcome!");
     }
 
     @RequestMapping(value={"/person/save"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage savePerson(@RequestBody Person person, HttpServletRequest request){
-        return ResponseMassage.newSuccessMsg(persionService.save(person));
+    public ResponseMessage savePerson(@RequestBody Person person, HttpServletRequest request){
+        return ResponseMessage.newSuccessMsg(persionService.save(person));
     }
 
     @RequestMapping(value={"/person/findAll"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage findAllPerson(){
-        return ResponseMassage.newSuccessMsg(persionService.findAll());
+    public ResponseMessage findAllPerson(){
+        return ResponseMessage.newSuccessMsg(persionService.findAll());
     }
 
     @RequestMapping(value={"/person/transactionTest"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage transactionTestPerson(){
-        return ResponseMassage.newSuccessMsg(persionService.transactionTest());
+    public ResponseMessage transactionTestPerson(){
+        return ResponseMessage.newSuccessMsg(persionService.transactionTest());
     }
 
     @RequestMapping(value={"/second/save"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage saveSecond(@RequestBody Second second, HttpServletRequest request){
-        return ResponseMassage.newSuccessMsg(secondService.save(second));
+    public ResponseMessage saveSecond(@RequestBody Second second, HttpServletRequest request){
+        return ResponseMessage.newSuccessMsg(secondService.save(second));
     }
 
     @RequestMapping(value={"/second/findAll"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage findAllSecond(){
-        return ResponseMassage.newSuccessMsg(secondService.findAll());
+    public ResponseMessage findAllSecond(){
+        return ResponseMessage.newSuccessMsg(secondService.findAll());
     }
 
     @RequestMapping(value={"/second/crossDBTest"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage crossDBTest(){
-        return ResponseMassage.newSuccessMsg(secondService.crossDBTest());
+    public ResponseMessage crossDBTest(){
+        return ResponseMessage.newSuccessMsg(secondService.crossDBTest());
     }
 
     @RequestMapping(value={"/person/test"}, consumes= MediaType.JSON_UTF_8)
-    public ResponseMassage test(){
+    public ResponseMessage test(){
         persionService.test(1);
-        return ResponseMassage.newSuccessMsg(null);
+        return ResponseMessage.newSuccessMsg(null);
     }
 
 
